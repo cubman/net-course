@@ -56,7 +56,7 @@ namespace PT4Tasks
             }
         }
 
-        class resClass : IEqualityComparer<resClass>
+        class resClass 
         {
             public string id { get; }
             public string cat { get; }
@@ -70,7 +70,9 @@ namespace PT4Tasks
                 shN = s;
                 cst = ct;
             }
-
+        }
+            class cmp : IEqualityComparer<resClass>
+        { 
             public bool Equals(resClass x, resClass y)
             {
                 return x.shN.Equals(y.shN);
@@ -101,16 +103,15 @@ namespace PT4Tasks
                 from v2 in b.Where(j => j.id == v1.good).DefaultIfEmpty(new good("", "", int.MaxValue))
                 select new resClass(v1.id, v1.category, v2.shopName, v2.cost);
                 
-
-           // foreach (var q in t)
-                //if (q != null)
-              //  Console.Write(q.id, ' ', q.cst, ' ', q.shname, ' ', q.cat);
                 
             var res = t.GroupBy(x => x.id).Select(x => 
             {
-                var w = x.Distinct();
-                    return new Tuple<int, string, int>(  w.Count(), w.First().id,  w.Min(p => p.cst) );
-            }).OrderBy(x => x.Item1).ThenByDescending(x=>x.Item2).Select(x => String.Format("{0} {1} {2}", x.Item1, x.Item2, x.Item3)).ToArray();
+                var a1 = x.Min(k => k.cst);
+                var w = x.Distinct(new cmp());
+                var a2 = w.Count(k => !k.shN.Equals(""));
+                var a3 = w.Count();
+                    return new Tuple<int, string, int>( a2, w.First().id, a2 == 0 ? 0 : a1 );
+            }).OrderBy(x => x.Item1).ThenBy(x=>x.Item2).Select(x => String.Format("{0} {1} {2}", x.Item1, x.Item2, x.Item3)).ToArray();
             File.WriteAllLines(GetString(), res,  Encoding.Default);
         }
     }
