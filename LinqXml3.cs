@@ -38,10 +38,8 @@ namespace PT4Tasks
                 var at = d.CreateAttribute("num");
                 at.InnerText = (++i).ToString();
                 el.Attributes.Append(at);
-                //el.Value =i.ToString();
                 el.InnerText = s;
                 bookDescriptions.AppendChild(el);
-               // ++i;
             }
             d.Save(GetString());
         }
