@@ -1,0 +1,15 @@
+E:\NET\obj\Debug\ptprj.csprojResolveAssemblyReference.cache
+E:\NET\obj\Debug\ptprj.exe
+E:\NET\obj\Debug\ptprj.pdb
+E:\NET\ptprj.exe
+E:\NET\ptprj.pdb
+C:\PT4Work\Output\ptprj.exe
+C:\PT4Work\Output\ptprj.pdb
+D:\User\Desktop\NET\obj\Debug\ptprj.csprojResolveAssemblyReference.cache
+D:\User\Desktop\NET\obj\Debug\ptprj.exe
+D:\User\Desktop\NET\obj\Debug\ptprj.pdb
+E:\pt_net\obj\Debug\ptprj.csprojResolveAssemblyReference.cache
+E:\pt_net\obj\Debug\ptprj.exe
+E:\pt_net\obj\Debug\ptprj.pdb
+E:\pt_net\ptprj.exe
+E:\pt_net\ptprj.pdb
