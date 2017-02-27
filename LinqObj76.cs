@@ -109,7 +109,7 @@ namespace PT4Tasks
                 var a1 = x.Min(k => k.cst);
                 var w = x.Distinct(new cmp());
                 var a2 = w.Count(k => !k.shN.Equals(""));
-                var a3 = w.Count();
+
                     return new Tuple<int, string, int>( a2, w.First().id, a2 == 0 ? 0 : a1 );
             }).OrderBy(x => x.Item1).ThenBy(x=>x.Item2).Select(x => String.Format("{0} {1} {2}", x.Item1, x.Item2, x.Item3)).ToArray();
             File.WriteAllLines(GetString(), res,  Encoding.Default);

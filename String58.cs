@@ -6,13 +6,16 @@ using System.Text;
 
 namespace PT4Tasks
 {
+
     public class MyTask: PT
     {
         public static void Solve()
         {
             Task("String58");
+            System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex(@"[^\\]");
+            var p = r.Split(GetString());
             
-            Put(new string(GetString().Split('\\').Last().TakeWhile(x => x != '.').ToArray()));
+            Put(new string(p.Last().TakeWhile(x => x != '.').ToArray()));
         }
     }
 }

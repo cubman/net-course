@@ -20,11 +20,7 @@ namespace PT4Tasks
                 var r = s.Split(new char[] { ' ', '!', '?', ',',':', '-', '.', ';', '(', ')', '\"', '\'' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var x in r)
                     if (x.Length == k)
-                    {
-                        res.Write(x + "\r\n");
-                        //res.Write("\n");
-                        Console.WriteLine(x);
-                    }
+                        res.Write(x.PadRight(80));
             }
             t.Close();
             res.Close();
