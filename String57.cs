@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace PT4Tasks
 {
@@ -11,7 +12,14 @@ namespace PT4Tasks
         public static void Solve()
         {
             Task("String57");
-            Put(string.Join(" ", GetString().Split(new char[1] { ' ' }, StringSplitOptions.RemoveEmptyEntries)));
+            Put(
+                Regex.Matches
+                    (GetString(), @"\\")
+                    .Cast<Match>()
+                    .Select(x => x.Value)
+                    
+                    .Last());
+
         }
     }
 }

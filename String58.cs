@@ -3,19 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace PT4Tasks
 {
 
-    public class MyTask: PT
+    public class MyTask : PT
     {
         public static void Solve()
         {
             Task("String58");
-            System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex(@"[^\\]");
-            var p = r.Split(GetString());
-            
-            Put(new string(p.Last().TakeWhile(x => x != '.').ToArray()));
+            Put(Regex.Match(GetString(), @"(\w+)(.?\w*)$").Groups[1].Value);
         }
     }
 }
+
